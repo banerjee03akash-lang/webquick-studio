@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
   MessageSquare, DollarSign, Zap, Target, HeartHandshake,
-  MessageCircle, Phone, Quote,
+  MessageCircle, Phone,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,11 +9,11 @@ import Footer from "@/components/Footer";
 const WA_LINK =
   "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
-const fadeUp = {
+const fadeUpProps = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: "easeOut" },
+  viewport: { once: true } as const,
+  transition: { duration: 0.6 },
 };
 
 const trustPoints = [
@@ -36,7 +36,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7 }}
           >
             <span className="inline-block bg-blue-600/20 text-blue-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-blue-600/30 mb-6">
               Our Story
@@ -52,18 +52,15 @@ export default function About() {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Avatar placeholder */}
-            <motion.div
-              {...fadeUp}
-              className="flex justify-center lg:justify-start"
-            >
+            {/* Avatar card */}
+            <motion.div {...fadeUpProps} className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center shadow-[0_30px_80px_-15px_hsl(221_83%_53%/0.4)]">
-                  <span className="text-8xl font-black text-white/20">A</span>
-                  <span className="absolute bottom-6 left-6 right-6 text-center">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center shadow-[0_30px_80px_-15px_rgba(37,99,235,0.4)]">
+                  <span className="text-8xl font-black text-white/10 select-none">A</span>
+                  <div className="absolute bottom-6 left-6 right-6 text-center">
                     <span className="text-white text-2xl font-black block">Akash</span>
                     <span className="text-blue-300 text-sm font-medium">Founder, WebQuick</span>
-                  </span>
+                  </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-blue-600 rounded-2xl px-4 py-3 shadow-xl">
                   <span className="text-white text-sm font-bold">✦ Premium Agency</span>
@@ -72,14 +69,16 @@ export default function About() {
             </motion.div>
 
             {/* Content */}
-            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
               <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Meet the Founder</span>
               <h2 className="mt-3 text-3xl md:text-4xl font-black text-brand-black leading-tight mb-6">
                 Hi, I'm <span className="text-blue-600">Akash</span>
               </h2>
-              <div className="relative pl-5 border-l-4 border-blue-600 mb-6">
-                <Quote size={18} className="text-blue-200 absolute -top-1 -left-1" />
-              </div>
               <div className="space-y-4 text-foreground/70 leading-relaxed">
                 <p>
                   I started WebQuick with a simple mission — to help businesses across India build
@@ -103,7 +102,7 @@ export default function About() {
       <section className="py-20 md:py-24 section-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <motion.div {...fadeUp}>
+            <motion.div {...fadeUpProps}>
               <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">Where We're Headed</span>
               <h2 className="mt-3 text-3xl md:text-4xl font-black text-white leading-tight mb-6">
                 Our Vision
@@ -114,8 +113,10 @@ export default function About() {
               </p>
             </motion.div>
             <motion.div
-              {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className="grid grid-cols-2 gap-4"
             >
               {[
@@ -140,7 +141,7 @@ export default function About() {
       {/* Why Clients Trust */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeUp} className="text-center mb-16">
+          <motion.div {...fadeUpProps} className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Our Values</span>
             <h2 className="mt-3 text-3xl md:text-5xl font-black text-brand-black leading-tight">
               Why Clients Trust Us
@@ -151,8 +152,10 @@ export default function About() {
             {trustPoints.map((item, i) => (
               <motion.div
                 key={item.label}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="card-premium p-7 flex items-center gap-5 group"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
@@ -168,7 +171,7 @@ export default function About() {
       {/* Final CTA */}
       <section className="py-20 md:py-28 section-dark">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div {...fadeUp}>
+          <motion.div {...fadeUpProps}>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-5 leading-tight">
               Let's Build Something{" "}
               <span className="text-blue-500">Great Together.</span>

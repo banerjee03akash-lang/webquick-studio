@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 const WA_LINK =
   "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
-const fadeUp = {
+const fadeUpProps = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: "easeOut" },
+  viewport: { once: true } as const,
+  transition: { duration: 0.6 },
 };
 
 const services = [
@@ -52,7 +52,7 @@ export default function Services() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7 }}
           >
             <span className="inline-block bg-blue-600/20 text-blue-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-blue-600/30 mb-6">
               What We Offer
@@ -74,8 +74,10 @@ export default function Services() {
             {services.map((svc, i) => (
               <motion.div
                 key={svc.title}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="card-premium p-8 md:p-10 group"
               >
                 <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
@@ -99,7 +101,7 @@ export default function Services() {
       {/* Process Strip */}
       <section className="py-16 md:py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeUp} className="text-center mb-12">
+          <motion.div {...fadeUpProps} className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-black text-brand-black">Our Simple Process</h2>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -111,8 +113,10 @@ export default function Services() {
             ].map((s, i) => (
               <motion.div
                 key={s.step}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center"
               >
                 <div className="text-5xl font-black text-blue-100 leading-none mb-2">{s.step}</div>
@@ -127,7 +131,7 @@ export default function Services() {
       {/* CTA */}
       <section className="py-20 md:py-28 section-dark">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div {...fadeUp}>
+          <motion.div {...fadeUpProps}>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-5 leading-tight">
               Ready to Build Your <span className="text-blue-500">Website?</span>
             </h2>

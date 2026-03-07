@@ -10,11 +10,11 @@ import Footer from "@/components/Footer";
 const WA_LINK =
   "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
-const fadeUp = {
+const fadeUpProps = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: "easeOut" },
+  viewport: { once: true } as const,
+  transition: { duration: 0.6 },
 };
 
 const clientTypes = [
@@ -80,7 +80,6 @@ export default function Index() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-black pt-16">
-        {/* Blue glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-600/20 blur-[120px] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(221_83%_53%/0.15)_0%,transparent_60%)]" />
 
@@ -88,7 +87,7 @@ export default function Index() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
             <span className="inline-block bg-blue-600/20 text-blue-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-blue-600/30 mb-6">
@@ -124,7 +123,7 @@ export default function Index() {
       {/* WHO WE WORK WITH */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeUp} className="text-center mb-16">
+          <motion.div {...fadeUpProps} className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Our Clients</span>
             <h2 className="mt-3 text-3xl md:text-5xl font-black text-brand-black leading-tight">
               Built for Growing Businesses
@@ -135,8 +134,10 @@ export default function Index() {
             {clientTypes.map((item, i) => (
               <motion.div
                 key={item.label}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="card-premium p-6 md:p-8 group cursor-default"
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors duration-300">
@@ -153,7 +154,7 @@ export default function Index() {
       {/* WHY WEBQUICK */}
       <section className="py-20 md:py-28 section-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeUp} className="text-center mb-16">
+          <motion.div {...fadeUpProps} className="text-center mb-16">
             <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">Our Edge</span>
             <h2 className="mt-3 text-3xl md:text-5xl font-black text-white leading-tight">
               Why WebQuick?
@@ -164,8 +165,10 @@ export default function Index() {
             {whyUs.map((item, i) => (
               <motion.div
                 key={item.label}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 hover:border-blue-500/40 transition-all duration-300"
               >
                 <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-xl flex items-center justify-center">
@@ -176,7 +179,7 @@ export default function Index() {
             ))}
           </div>
 
-          <motion.div {...fadeUp} className="text-center">
+          <motion.div {...fadeUpProps} className="text-center">
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-10 py-4">
               Book Now
             </a>
@@ -187,27 +190,29 @@ export default function Index() {
       {/* PRICING */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeUp} className="text-center mb-16">
+          <motion.div {...fadeUpProps} className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Transparent Pricing</span>
             <h2 className="mt-3 text-3xl md:text-5xl font-black text-brand-black leading-tight">
               Simple Transparent Pricing
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`relative rounded-2xl p-8 flex flex-col gap-6 transition-all duration-300 ${
                   plan.highlight
-                    ? "bg-blue-600 text-white shadow-[0_20px_60px_-10px_hsl(221_83%_53%/0.5)] scale-105"
+                    ? "bg-blue-600 text-white shadow-[0_20px_60px_-10px_hsl(221_83%_53%/0.5)] md:-mt-4"
                     : "card-premium"
                 }`}
               >
                 {plan.highlight && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-black text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-black text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                     Most Popular
                   </span>
                 )}
@@ -222,7 +227,7 @@ export default function Index() {
                 <ul className="flex flex-col gap-3 flex-1">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-center gap-3 text-sm">
-                      <Check size={16} className={plan.highlight ? "text-white" : "text-blue-600"} />
+                      <Check size={16} className={plan.highlight ? "text-white flex-shrink-0" : "text-blue-600 flex-shrink-0"} />
                       <span className={plan.highlight ? "text-white/90" : "text-foreground/80"}>{f}</span>
                     </li>
                   ))}
