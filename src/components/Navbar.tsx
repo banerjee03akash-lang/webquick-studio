@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const WA_LINK =
-  "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
+  "https://wa.me/917029711560?text=Hello%20Weboo%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
 const navLinks = [
   { label: "Home", to: "/" },
