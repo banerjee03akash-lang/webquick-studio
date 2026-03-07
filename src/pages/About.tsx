@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const WA_LINK =
-  "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
+  "https://wa.me/917029711560?text=Hello%20Weboo%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
 const fadeUpProps = {
   initial: { opacity: 0, y: 30 },
@@ -42,7 +42,7 @@ export default function About() {
               Our Story
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-5">
-              About <span className="text-blue-500">WebQuick</span>
+              About <span className="text-blue-500">Weboo</span>
             </h1>
           </motion.div>
         </div>
@@ -59,7 +59,7 @@ export default function About() {
                   <span className="text-8xl font-black text-white/10 select-none">A</span>
                   <div className="absolute bottom-6 left-6 right-6 text-center">
                     <span className="text-white text-2xl font-black block">Akash</span>
-                    <span className="text-blue-300 text-sm font-medium">Founder, WebQuick</span>
+                    <span className="text-blue-300 text-sm font-medium">Founder, Weboo</span>
                   </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-blue-600 rounded-2xl px-4 py-3 shadow-xl">
@@ -81,7 +81,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-foreground/70 leading-relaxed">
                 <p>
-                  I started WebQuick with a simple mission — to help businesses across India build
+                  I started Weboo with a simple mission — to help businesses across India build
                   premium-looking websites without paying expensive agency fees.
                 </p>
                 <p>
@@ -90,7 +90,7 @@ export default function About() {
                   fast delivery, and websites that generate real inquiries.
                 </p>
                 <p className="font-semibold text-brand-black">
-                  WebQuick is built on trust, transparency, and quality service.
+                  Weboo is built on trust, transparency, and quality service.
                 </p>
               </div>
             </motion.div>

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const WA_LINK =
-  "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
+  "https://wa.me/917029711560?text=Hello%20Weboo%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
 const fadeUpProps = {
   initial: { opacity: 0, y: 30 },
@@ -119,7 +119,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-5xl font-black text-blue-100 leading-none mb-2">{s.step}</div>
+                <div className="text-5xl font-black text-brand-black leading-none mb-2">{s.step}</div>
                 <h4 className="font-black text-brand-black text-lg mb-1">{s.label}</h4>
                 <p className="text-muted-foreground text-sm">{s.desc}</p>
               </motion.div>
