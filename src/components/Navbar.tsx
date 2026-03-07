@@ -44,7 +44,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1 flex-shrink-0">
           <span className="text-xl md:text-2xl font-black tracking-tight text-brand-black">
-            Web<span className="text-blue-600">Quick</span>
+            Web<span className="text-blue-600">oo</span>
           </span>
         </Link>
 
