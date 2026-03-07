@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const WA_LINK =
-  "https://wa.me/917029711560?text=Hello%20WebQuick%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
+  "https://wa.me/917029711560?text=Hello%20Weboo%2C%20I'm%20looking%20to%20create%20a%20professional%20website.%20Please%20guide%20me%20with%20the%20next%20steps.";
 
 const fadeUpProps = {
   initial: { opacity: 0, y: 30 },
@@ -42,7 +42,7 @@ export default function About() {
               Our Story
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-5">
-              About <span className="text-blue-500">WebQuick</span>
+              About <span className="text-blue-500">Weboo</span>
             </h1>
           </motion.div>
         </div>
